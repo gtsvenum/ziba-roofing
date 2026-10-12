@@ -36,7 +36,7 @@ All in `data.py` → `BIZ`:
 | `phone_display` / `phone_e164` | (301) 366-8210 | ✅ Set by Faraz 2026-10-11. NOTE: this number is also on file as Sonela's management/emergency contact — confirm it's the right line for roofing leads. |
 | `email` | mike@zibamgmt.com | ✅ Set by Faraz 2026-10-11 |
 | `form_endpoint` | formsubmit.co/mike@… | ⚠️ **Needs one-time activation — see below** |
-| `domain` | https://zibaroofing.com | ❌ Guess. Drives every canonical URL, sitemap entry, and JSON-LD @id |
+| `domain` | https://zibaroofing.com | ✅ **Registered 2026-10-11 (IONOS, expires 2027-10-11).** DNS not yet pointed — see DNS_SETUP.md |
 | `street` | 712 15th Street NE | ❌ Conflict: contract template says 712 15th St NE, MEMORY.md says 1314 North Carolina Ave NE |
 | `founded` | 2015 | ❌ Guess |
 | `lat` / `lon` | approximate DC | ❌ Geocode once address is confirmed |
@@ -161,13 +161,26 @@ This is the part most contractor sites miss entirely.
 
 ---
 
-## Deploy
+## Deploy — ALREADY SET UP
 
-Static output, host anywhere:
+**Repo:** https://github.com/gtsvenum/ziba-roofing (public)
+**Live on GitHub's servers:** verified serving correct content
+**Blocker:** DNS at IONOS not yet pointed — see `DNS_SETUP.md`
 
-- **GitHub Pages** — `.nojekyll` is already emitted; push `site/` to a repo
-- **Netlify / Cloudflare Pages** — drag-drop `site/`, or point at the repo
-- Any shared host — upload `site/` contents
+Deployment is automatic. Push to `main` and GitHub Actions rebuilds and redeploys
+in ~25 seconds. You never deploy by hand:
 
-The domain in `data.py` must match the real deployed domain or every canonical URL
-and JSON-LD `@id` will be wrong.
+```bash
+cd "~/.openclaw/workspace/Other Projects/ziba-roofing"
+# edit data.py
+python3 build_site.py          # optional — verify locally first
+git add -A && git commit -m "update" && git push
+```
+
+The workflow (`.github/workflows/deploy.yml`) runs the generator on a clean Ubuntu
+box, asserts the key files exist, and **fails the build if a placeholder phone
+number ever reaches the output**. The `site/` directory is committed for local
+preview but the deployed copy is always rebuilt from source.
+
+`site/CNAME` is generated from `BIZ["domain"]`, so the custom domain can never
+drift out of sync with the canonical URLs.
