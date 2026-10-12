@@ -84,6 +84,30 @@ In a browser: padlock icon, no warnings, site loads at `https://zibaroofing.com`
 
 ---
 
+## ⚠️ Your DNS currently points at an IONOS parking page
+
+`dig +short zibaroofing.com A` returns **74.208.236.24** — that's IONOS parking,
+not GitHub. Replace that A record with the four GitHub ones above.
+
+## When DNS is fixed, flip two switches
+
+The site is temporarily configured for the preview URL. Once the A records point
+at GitHub, in `data.py` set:
+
+```python
+"pages_custom_domain": True,
+"base_path": "",
+```
+
+then `git add -A && git commit -m "Switch to live domain" && git push`, and
+re-attach the domain:
+
+```bash
+gh api -X PUT repos/gtsvenum/ziba-roofing/pages -f "cname=zibaroofing.com"
+```
+
+(Or just tell Max and he'll do it.)
+
 ## Current status
 
 | Item | State |
@@ -92,8 +116,9 @@ In a browser: padlock icon, no warnings, site loads at `https://zibaroofing.com`
 | Repo | ✅ github.com/gtsvenum/ziba-roofing |
 | Build + deploy workflow | ✅ Passing — rebuilds on every push to `main` |
 | Site live on GitHub servers | ✅ Verified serving 200 with correct content |
-| Custom domain configured | ✅ CNAME file set to zibaroofing.com |
-| **DNS records at IONOS** | ❌ **Not set — this is the only blocker** |
+| Custom domain configured | ⏸️ Temporarily OFF so the preview URL works |
+| Preview URL | ✅ **https://gtsvenum.github.io/ziba-roofing/** — live and verified |
+| **DNS records at IONOS** | ❌ **Pointing at IONOS parking (74.208.236.24) — must be changed to GitHub's four IPs** |
 | HTTPS certificate | ⏳ Issues automatically after DNS resolves |
 
 ---
