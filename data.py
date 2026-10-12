@@ -63,6 +63,9 @@ BIZ = {
     # Canonical URLs stay zibaroofing.com regardless, so the preview URL cannot
     # cause duplicate-content indexing.
     "pages_custom_domain": False,
+    # Set to "" (empty) when the real domain is live. Only needed for the
+    # gtsvenum.github.io/ziba-roofing/ preview, which serves from a subdirectory.
+    "base_path": "/ziba-roofing",
 }
 
 # Brand palette derived from the real Ziba logo (paisley mark).

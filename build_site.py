@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Ziba Roofing static site generator. Run: python3 build_site.py -> ./site/"""
-import json, os, shutil, html
+import json, os, re, shutil, html
 from datetime import date
 from data import BIZ, COLORS, SERVICES, AREAS, WHY, PROCESS, GENERAL_FAQS
 from assets_src import CSS, FAVICON, FORMJS
@@ -666,10 +666,15 @@ def emit_assets():
     open(os.path.join(ad, "site.css"), "w").write(CSS)
     open(os.path.join(ad, "favicon.svg"), "w").write(FAVICON)
     open(os.path.join(ad, "form.js"), "w").write(FORMJS)
-    logo = os.path.expanduser(
-        "~/.openclaw/workspace/Other Projects/Ziba Management/ziba-logo-transparent.png")
-    if os.path.exists(logo):
-        shutil.copy(logo, os.path.join(ad, "logo.png"))
+    # Logo lives in the repo so CI can build it. Falls back to the local
+    # workspace copy only if someone deleted brand/logo.png.
+    for logo in ("brand/logo.png", os.path.expanduser(
+            "~/.openclaw/workspace/Other Projects/Ziba Management/ziba-logo-transparent.png")):
+        if os.path.exists(logo):
+            shutil.copy(logo, os.path.join(ad, "logo.png"))
+            break
+    else:
+        raise SystemExit("ERROR: brand/logo.png missing - refusing to ship a site with no logo")
     # GitHub Pages: don't run Jekyll over the output
     open(os.path.join(OUT, ".nojekyll"), "w").write("")
     # GitHub Pages custom domain. Derived from BIZ["domain"] so it can never
@@ -677,6 +682,29 @@ def emit_assets():
     if BIZ.get("pages_custom_domain", True):
         host = BIZ["domain"].split("://", 1)[-1].rstrip("/")
         open(os.path.join(OUT, "CNAME"), "w").write(host + "\n")
+
+
+def apply_base_path():
+    """Rewrite root-relative links when serving from a subdirectory.
+
+    GitHub project pages serve at /<repo>/, so href="/services/" would 404.
+    Canonical URLs and JSON-LD keep the real domain and are left untouched,
+    so this cannot cause duplicate-content indexing.
+    """
+    base = BIZ.get("base_path", "").rstrip("/")
+    if not base:
+        return
+    pat = re.compile(r'(href|src)="/(?!/)')
+    for root, _dirs, files in os.walk(OUT):
+        for fn in files:
+            if not fn.endswith((".html", ".js")):
+                continue
+            p = os.path.join(root, fn)
+            with open(p) as fh:
+                txt = fh.read()
+            with open(p, "w") as fh:
+                fh.write(pat.sub(lambda m: f'{m.group(1)}="{base}/', txt))
+    print(f"  (rewrote root-relative links with base path {base})")
 
 
 def main():
@@ -699,6 +727,7 @@ def main():
     emit_sitemap()
     emit_llms()
     emit_business_json()
+    apply_base_path()
     print(f"built {len(PAGES)} pages -> ./{OUT}/")
     for p, _, _ in PAGES:
         print("  ", p or "/")

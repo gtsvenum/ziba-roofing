@@ -39,6 +39,10 @@ jobs:
           if grep -rq "555-0100" site/; then
             echo "ERROR: placeholder phone number found in output"; exit 1
           fi
+          # logo must be present - a site with a broken logo looks abandoned
+          test -s site/assets/logo.png
+          # canonical URLs must always point at the real domain, never the preview
+          grep -q 'rel="canonical" href="https://zibaroofing.com/"' site/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
