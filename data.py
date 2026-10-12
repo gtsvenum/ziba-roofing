@@ -36,13 +36,13 @@ BIZ = {
     "phone_display": "(301) 366-8210",
     "phone_e164": "+13013668210",
     "email": "mike@zibamgmt.com",
-    "street": "712 15th Street NE",              # «confirm — contract template says 712 15th St NE; MEMORY.md says 1314 North Carolina Ave NE»
-    "city": "Washington",
-    "region": "DC",
-    "postal": "20002",
+    "street": "4000 Rosemary Street",            # ✅ Set by Faraz 2026-10-11
+    "city": "Chevy Chase",
+    "region": "MD",
+    "postal": "20815",
     "country": "US",
-    "lat": 38.8977,
-    "lon": -76.9830,
+    "lat": 38.9847,   # Chevy Chase MD 20815 — approximate, refine if exact pin matters
+    "lon": -77.0797,
     "license": "410520000203",
     "license_authority": "District of Columbia (DCRA/DLCP) Home Improvement Contractor",
     "founded": "2015",                            # «confirm year»
