@@ -57,6 +57,12 @@ BIZ = {
     # Until someone clicks it, nothing is delivered. See README.
     "form_endpoint": "https://formsubmit.co/mike@zibamgmt.com",
     "form_to": "mike@zibamgmt.com",
+    # TEMPORARY: False while DNS still points at IONOS parking, so the
+    # gtsvenum.github.io/ziba-roofing/ preview URL works. Flip back to True the
+    # moment the A records point at GitHub, or the live domain will 404.
+    # Canonical URLs stay zibaroofing.com regardless, so the preview URL cannot
+    # cause duplicate-content indexing.
+    "pages_custom_domain": False,
 }
 
 # Brand palette derived from the real Ziba logo (paisley mark).

@@ -674,8 +674,9 @@ def emit_assets():
     open(os.path.join(OUT, ".nojekyll"), "w").write("")
     # GitHub Pages custom domain. Derived from BIZ["domain"] so it can never
     # drift out of sync with the canonical URLs.
-    host = BIZ["domain"].split("://", 1)[-1].rstrip("/")
-    open(os.path.join(OUT, "CNAME"), "w").write(host + "\n")
+    if BIZ.get("pages_custom_domain", True):
+        host = BIZ["domain"].split("://", 1)[-1].rstrip("/")
+        open(os.path.join(OUT, "CNAME"), "w").write(host + "\n")
 
 
 def main():

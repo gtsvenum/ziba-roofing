@@ -30,7 +30,6 @@ jobs:
       - name: Verify build output
         run: |
           test -f site/index.html
-          test -f site/CNAME
           test -f site/sitemap.xml
           test -f site/llms.txt
           test -f site/robots.txt
