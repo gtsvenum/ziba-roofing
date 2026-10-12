@@ -1,0 +1,216 @@
+{
+  "name": "Ziba Roofing",
+  "legalName": "Ziba Management Inc.",
+  "category": "Roofing contractor",
+  "url": "https://zibaroofing.com/",
+  "telephone": "(301) 366-8210",
+  "telephoneE164": "+13013668210",
+  "email": "mike@zibamgmt.com",
+  "address": {
+    "street": "712 15th Street NE",
+    "city": "Washington",
+    "region": "DC",
+    "postalCode": "20002",
+    "country": "US"
+  },
+  "license": {
+    "number": "410520000203",
+    "authority": "District of Columbia (DCRA/DLCP) Home Improvement Contractor"
+  },
+  "hours": "Mon\u2013Fri 7am\u20136pm \u00b7 Sat 8am\u20132pm \u00b7 Emergency tarping 24/7",
+  "foundedYear": "2015",
+  "emergencyService": "24/7 leak tarping",
+  "freeEstimate": true,
+  "servesArea": [
+    {
+      "name": "Washington, DC",
+      "url": "https://zibaroofing.com/areas/washington-dc/",
+      "neighborhoods": [
+        "Capitol Hill",
+        "Shaw",
+        "Petworth",
+        "Columbia Heights",
+        "Brookland",
+        "Georgetown",
+        "Anacostia",
+        "Takoma",
+        "Bloomingdale",
+        "Trinidad",
+        "Chevy Chase DC",
+        "Woodley Park"
+      ]
+    },
+    {
+      "name": "Montgomery County, MD",
+      "url": "https://zibaroofing.com/areas/montgomery-county-md/",
+      "neighborhoods": [
+        "Bethesda",
+        "Chevy Chase",
+        "Silver Spring",
+        "Rockville",
+        "Potomac",
+        "Takoma Park",
+        "Kensington",
+        "Wheaton",
+        "Gaithersburg",
+        "Olney",
+        "Germantown",
+        "North Bethesda"
+      ]
+    },
+    {
+      "name": "Prince George's County, MD",
+      "url": "https://zibaroofing.com/areas/prince-georges-county-md/",
+      "neighborhoods": [
+        "Hyattsville",
+        "College Park",
+        "Bowie",
+        "Laurel",
+        "Greenbelt",
+        "Upper Marlboro",
+        "Mount Rainier",
+        "Riverdale Park",
+        "Beltsville",
+        "Clinton",
+        "Largo",
+        "Oxon Hill"
+      ]
+    },
+    {
+      "name": "Arlington, VA",
+      "url": "https://zibaroofing.com/areas/arlington-va/",
+      "neighborhoods": [
+        "Clarendon",
+        "Ballston",
+        "Rosslyn",
+        "Shirlington",
+        "Cherrydale",
+        "Lyon Village",
+        "Arlington Ridge",
+        "Crystal City",
+        "Westover",
+        "Aurora Highlands",
+        "Donaldson Run"
+      ]
+    },
+    {
+      "name": "Alexandria, VA",
+      "url": "https://zibaroofing.com/areas/alexandria-va/",
+      "neighborhoods": [
+        "Old Town",
+        "Del Ray",
+        "Rosemont",
+        "Beverley Hills",
+        "Seminary Hill",
+        "Landmark",
+        "Parkfairfax",
+        "Potomac Yard",
+        "Arlandria"
+      ]
+    },
+    {
+      "name": "Fairfax County, VA",
+      "url": "https://zibaroofing.com/areas/fairfax-county-va/",
+      "neighborhoods": [
+        "McLean",
+        "Falls Church",
+        "Vienna",
+        "Tysons",
+        "Reston",
+        "Herndon",
+        "Great Falls",
+        "Annandale",
+        "Burke",
+        "Springfield",
+        "Oakton",
+        "Centreville"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Roof Replacement",
+      "url": "https://zibaroofing.com/services/roof-replacement/",
+      "summary": "A full roof replacement in the Washington DC metro area typically takes one to three days and starts with a complete tear-off down to the deck, so rotted sheathing is found and replaced rather than covered up."
+    },
+    {
+      "name": "Roof Repair & Leak Diagnosis",
+      "url": "https://zibaroofing.com/services/roof-repair/",
+      "summary": "Most roof leaks are not holes in the field of the roof \u2014 they are failed flashing, cracked pipe boots, backed-up valleys, or clogged gutters, and water usually enters well uphill of the ceiling stain you can see."
+    },
+    {
+      "name": "Flat & Low-Slope Roofing",
+      "url": "https://zibaroofing.com/services/flat-roofing/",
+      "summary": "Flat roofs are standard on DC rowhouses, and the three systems worth installing are TPO, EPDM rubber, and modified bitumen \u2014 each lasting roughly 20 to 30 years when the drainage and details are done correctly."
+    },
+    {
+      "name": "Metal Roofing",
+      "url": "https://zibaroofing.com/services/metal-roofing/",
+      "summary": "A standing seam metal roof lasts 40 to 70 years \u2014 roughly two to three times an asphalt roof \u2014 because the fasteners are concealed inside the seam where weather never reaches them."
+    },
+    {
+      "name": "Slate & Tile Roofing",
+      "url": "https://zibaroofing.com/services/slate-and-tile/",
+      "summary": "Natural slate roofs last 75 to 150 years, so a slate roof that is leaking usually needs targeted repair of the flashing and failed fasteners \u2014 not replacement."
+    },
+    {
+      "name": "Gutters & Drainage",
+      "url": "https://zibaroofing.com/services/gutters-and-drainage/",
+      "summary": "Undersized or clogged gutters cause more foundation and fascia damage in the DMV than roof leaks do, because the water ends up against the house instead of away from it."
+    },
+    {
+      "name": "Storm Damage & Insurance Claims",
+      "url": "https://zibaroofing.com/services/storm-damage-and-insurance/",
+      "summary": "Most storm-damage claims are denied or underpaid because the damage was documented poorly, not because it was not covered \u2014 so the photo and measurement record matters as much as the repair."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What areas do you serve?",
+      "answer": "Ziba Roofing serves the DMV: Washington DC, Montgomery County and Prince George's County in Maryland, and Arlington, Alexandria, and Fairfax County in Virginia."
+    },
+    {
+      "question": "Are you licensed and insured?",
+      "answer": "Yes. Ziba Roofing operates under Ziba Management Inc. under District of Columbia (DCRA/DLCP) Home Improvement Contractor license #410520000203, with general liability and workers' compensation coverage. Certificates are available on request."
+    },
+    {
+      "question": "How much does a new roof cost in the DMV?",
+      "answer": "Most residential replacements in the Washington DC metro area run between $8,000 and $30,000. The drivers are roof size in squares, pitch, material, how many existing layers come off, and how much decking needs replacing. Flat and metal roofs sit at the upper end."
+    },
+    {
+      "question": "How do I know if I need a new roof or just a repair?",
+      "answer": "Shingles curling at the edges, bare patches where granules have washed off, granules collecting in the gutters, daylight visible through the attic sheathing, and leaks in more than one location all point to replacement. A single leak on a roof under 15 years old is usually a repair."
+    },
+    {
+      "question": "How long does a roof last in the Washington DC area?",
+      "answer": "Architectural asphalt shingles last 20 to 30 years here, flat membrane roofs 20 to 30 years, standing seam metal 40 to 70, and natural slate 75 to 150. DMV summers are hard on asphalt, so roofs on unventilated attics tend toward the low end of those ranges."
+    },
+    {
+      "question": "Do you offer free estimates?",
+      "answer": "Yes. Roof inspection and written estimate are free, and you get the inspection photos whether or not you hire us."
+    },
+    {
+      "question": "Do you work with insurance claims?",
+      "answer": "Yes. We document storm damage to the standard an adjuster needs, and we meet the adjuster on site. We do not waive deductibles, which is illegal in DC, Maryland, and Virginia."
+    },
+    {
+      "question": "What is the best time of year to replace a roof in the DMV?",
+      "answer": "Late spring through early fall. Asphalt shingles need temperatures above roughly 40\u00b0F to seal properly. We install year-round using hand-sealing in cold weather, but given the choice, schedule in mild weather."
+    },
+    {
+      "question": "How long does a roof replacement take?",
+      "answer": "One to three working days for most DMV homes. Slate, tile, and large complex roofs take longer."
+    },
+    {
+      "question": "Do you require a deposit?",
+      "answer": "A material deposit is due at scheduling with the balance on completion. We do not ask for full payment up front \u2014 no legitimate roofer does."
+    }
+  ],
+  "policies": [
+    "Does not waive or absorb insurance deductibles",
+    "Does not install over existing roof layers",
+    "Replaces all flashing and pipe boots on full roof replacements",
+    "Provides written line-item estimates before scheduling"
+  ],
+  "lastUpdated": "2026-10-11"
+}
